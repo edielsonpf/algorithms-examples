@@ -28,12 +28,8 @@ class QuickSort(object):
         self.__SetItem(index2, aux)
     
     def __Partition(self,p,r):
-        print('p:%g' %p)
-        print('r:%g' %r)
-        
         x = self.__GetItem(r)
         i=p-1
-        
         #for must go from p to r-1 (inclusive), so in Python must be r
         for j in range(p, r):   
             if self.__GetItem(j) <= x:
@@ -46,10 +42,8 @@ class QuickSort(object):
     def __QuickSort(self,p,r): 
         if p < r:
             q=self.__Partition(p,r)
-            print('q:%g' %q)
             self.__QuickSort(p, q-1)
             self.__QuickSort(q+1,r)
-            print(self.__Array)
     
     def Sort(self,A):
         self.__Array = A
