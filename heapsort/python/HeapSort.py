@@ -4,19 +4,17 @@ Created on Mar 10, 2016
 @author: Edielson
 '''
 
-class MaxHeap(object):
+class HeapSort(object):
     '''
     classdocs
     '''
     __heapSize = 0
     __Heap = []
     
-    def __init__(self,A):
+    def __init__(self):
         '''
         Constructor
         '''
-        self.__BuildMaxHeap(A)    
-    
     def __DecrementHeapSize(self):
         self.__heapSize=self.__heapSize-1
     
@@ -73,9 +71,9 @@ class MaxHeap(object):
     def GetHeap(self):
         return self.__Heap
     
-    def Sort(self): 
+    def Sort(self, A): 
         
-        NewArray = []
+        self.__BuildMaxHeap(A)
         if self.GetHeapSize() > 0:
         
             #for must go from HeapSize to 1 (inclusive), so in Python must be 0
@@ -85,8 +83,4 @@ class MaxHeap(object):
                 self.SetItem(i, aux) 
                 self.__DecrementHeapSize() 
                 self.__MaxHeapify(0)
-                
-            NewArray = self.GetHeap()
-            self.__CleanHeap()
-                    
-        return NewArray    
+        return A    
