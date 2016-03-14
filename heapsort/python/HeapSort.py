@@ -44,6 +44,7 @@ class MaxHeap(object):
         self.__Heap = A
         self.__heapSize = len(A)
         
+        #for must go from (Size A)/2 to 0 (inclusive), so in Python must be -1. Index starts in 0 so the last position is (Size A -1)
         for i in range((len(A)-1)/2, -1, -1):   
             self.__MaxHeapify(i) 
     
@@ -77,6 +78,7 @@ class MaxHeap(object):
         NewArray = []
         if self.GetHeapSize() > 0:
         
+            #for must go from HeapSize to 1 (inclusive), so in Python must be 0
             for i in range (self.GetHeapSize()-1, 0, -1): 
                 aux=self.GetItem(0) 
                 self.SetItem(0, self.GetItem(i)) 

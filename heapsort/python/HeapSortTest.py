@@ -6,6 +6,6 @@ myHeap = MaxHeap(A)
 print('The array is internally transformed in a max heap')
 print(myHeap.GetHeap())
 
-print('Aplying heap sort algorithm')
+print('Applying heap sort algorithm')
 NewA = myHeap.Sort() 
 print(NewA)
